@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Deductible Donations - TaxAid Africa</title>
+    <meta name="description" content="Learn about tax deductible donations to TaxAid Africa. Your contributions may qualify for tax benefits.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D8CD5',
+                        'primary-dark': '#2470ab',
+                        secondary: '#F2BC1C',
+                        'secondary-dark': '#d9a617',
+                        accent: '#E64249',
+                        'accent-dark': '#c93238',
+                        light: '#f4f7f6',
+                        dark: '#333333',
+                        muted: '#555555',
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        hand: ['Architects Daughter', 'cursive'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .backdrop-blur-custom { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeInUp 0.8s ease forwards; }
+        .animate-delay-100 { animation-delay: 100ms; }
+        .animate-delay-200 { animation-delay: 200ms; }
+    </style>
+</head>
+<body class="min-h-screen bg-light font-sans text-dark antialiased">
+    
+    <!-- HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-custom border-b border-gray-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-18 lg:h-20">
+                
+                <a href="../index.html" class="flex-shrink-0 relative">
+                    <img src="../assets/images/logo.png" alt="TaxAid Africa" class="h-8 sm:h-10 lg:h-12 w-auto transition-all duration-200">
+                    <span class="absolute top-1/2 -translate-y-1/2 -right-8 sm:-right-10 lg:-right-12 text-sm sm:text-base lg:text-lg font-hand text-secondary transition-all duration-200">Africa</span>
+                </a>
+                
+                <nav class="hidden lg:flex items-center gap-8">
+                    <a href="../index.html#info" class="text-sm font-semibold text-muted hover:text-primary transition-colors">Tax Information</a>
+                    <div class="relative group">
+                        <button type="button" aria-haspopup="true" aria-expanded="false" class="text-sm font-semibold text-muted hover:text-primary transition-colors flex items-center gap-1 focus:outline-none focus:text-primary">
+                            Support our work
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:rotate-180 group-focus-within:rotate-180"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200" role="menu">
+                            <ul class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[220px]">
+                                <li><a href="donate.html" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Make a donation</a></li>
+                                <li><a href="partner.html" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Corporate partnerships</a></li>
+                                <li><a href="../index.html#gift" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Leave a gift in your will</a></li>
+                                <li><a href="../index.html#events" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Fundraising and Events</a></li>
+                                <li><a href="../index.html#volunteer" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Volunteer</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-sm font-semibold text-muted hover:text-primary transition-colors">About Us</a>
+                    <a href="contact.html" class="text-sm font-semibold text-muted hover:text-primary transition-colors">Contact</a>
+                </nav>
+                
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="donate.html" class="px-5 py-2.5 bg-primary hover:bg-primary-dark text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-0.5">Donate</a>
+                    <a href="login.html" class="px-5 py-2.5 bg-accent hover:bg-accent-dark text-white text-sm font-bold rounded-full shadow-lg shadow-accent/20 hover:shadow-xl transition-all hover:-translate-y-0.5">Member Login</a>
+                </div>
+                
+                <div class="flex lg:hidden items-center gap-2">
+                    <a href="donate.html" class="hidden sm:inline-flex px-4 py-2 bg-primary text-white text-sm font-bold rounded-full">Donate</a>
+                    <button class="p-2 text-dark hover:bg-gray-100 rounded-lg transition-colors" id="mobile-menu-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="hidden fixed inset-0 bg-white z-[100] overflow-y-auto" id="mobile-menu">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <div class="relative">
+                    <img src="../assets/images/logo.png" alt="TaxAid Africa" class="h-10 w-auto">
+                    <span class="absolute top-1/2 -translate-y-1/2 -right-10 text-base font-hand text-secondary">Africa</span>
+                </div>
+                <button class="p-2 hover:bg-gray-100 rounded-lg" id="mobile-menu-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                </button>
+            </div>
+            <div class="space-y-3 mb-8">
+                <a href="donate.html" class="block w-full py-3 bg-primary text-white text-center font-bold rounded-xl">Donate</a>
+                <a href="login.html" class="block w-full py-3 bg-accent text-white text-center font-bold rounded-xl">Member Login</a>
+            </div>
+            <div class="space-y-1">
+                <a href="../index.html" class="block py-4 text-lg font-medium border-b border-gray-100">Home</a>
+                <a href="../index.html#info" class="block py-4 text-lg font-medium border-b border-gray-100">Tax Information</a>
+                <a href="about.html" class="block py-4 text-lg font-medium border-b border-gray-100">About Us</a>
+                <a href="contact.html" class="block py-4 text-lg font-medium border-b border-gray-100">Contact</a>
+            </div>
+        </div>
+    </div>
+    
+    <main class="pt-16 sm:pt-18 lg:pt-20">
+        
+        <!-- Hero Section -->
+        <section class="relative py-20 lg:py-28 bg-primary overflow-hidden">
+            <div class="absolute inset-0 opacity-30" style="background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);"></div>
+            
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in">
+                    Tax Deductible Donations
+                </h1>
+                <p class="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto animate-fade-in animate-delay-100">
+                    Learn how your donation to TaxAid Africa may qualify for tax benefits.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Main Content Section -->
+        <section class="py-16 sm:py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Introduction -->
+                <div class="mb-12">
+                    <h2 class="text-3xl font-bold text-dark mb-6">About Tax Deductible Donations</h2>
+                    <p class="text-lg text-muted leading-relaxed mb-6">
+                        TaxAid and Enlightenment Initiative (TaxAid Africa) is a registered not-for-profit organization dedicated to promoting voluntary tax compliance and supporting financially vulnerable individuals and small businesses across Nigeria.
+                    </p>
+                    <p class="text-lg text-muted leading-relaxed">
+                        Donations made to registered charitable organizations like ours may qualify for tax deductions under Nigerian tax law. This means you can potentially reduce your taxable income by the amount you donate, subject to applicable limits and regulations.
+                    </p>
+                </div>
+                
+                <!-- How It Works -->
+                <div class="bg-light rounded-2xl p-8 mb-12">
+                    <h3 class="text-2xl font-bold text-dark mb-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-white"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                        </div>
+                        How Tax Deductible Donations Work
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-2">Make Your Donation</h4>
+                                <p class="text-muted">Donate to TaxAid Africa through our secure online portal or bank transfer. All donations are recorded and acknowledged.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">2</div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-2">Receive Your Receipt</h4>
+                                <p class="text-muted">We will provide you with an official donation receipt that includes all details required for tax purposes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold">3</div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-2">Claim Your Deduction</h4>
+                                <p class="text-muted">When filing your tax returns, include your donation as a deductible expense. Consult with your tax advisor for specific guidance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tax Benefits -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-dark mb-6">Potential Tax Benefits</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="border-2 border-gray-100 rounded-xl p-6 hover:border-primary/30 transition-all">
+                            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><line x1="19" x2="19" y1="8" y2="14"></line><line x1="22" x2="16" y1="11" y2="11"></line></svg>
+                            </div>
+                            <h4 class="font-bold text-dark mb-2">For Individuals</h4>
+                            <p class="text-muted text-sm">Individual taxpayers may be eligible to deduct charitable donations from their assessable income, subject to limits specified by the Federal Inland Revenue Service (FIRS).</p>
+                        </div>
+                        
+                        <div class="border-2 border-gray-100 rounded-xl p-6 hover:border-secondary/30 transition-all">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-secondary-dark"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg>
+                            </div>
+                            <h4 class="font-bold text-dark mb-2">For Businesses</h4>
+                            <p class="text-muted text-sm">Corporate entities may claim tax relief on donations made to approved charitable organizations. The deduction is typically limited to a percentage of total profits.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Important Notice -->
+                <div class="bg-secondary/10 border-l-4 border-secondary rounded-r-xl p-6 mb-12">
+                    <h4 class="font-bold text-dark mb-3 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-secondary-dark"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+                        Important Notice
+                    </h4>
+                    <p class="text-muted">
+                        Tax laws and regulations can change. We strongly recommend consulting with a qualified tax professional or the Federal Inland Revenue Service (FIRS) to understand how charitable donations may affect your specific tax situation. TaxAid Africa does not provide tax advice.
+                    </p>
+                </div>
+                
+                <!-- Documentation -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-bold text-dark mb-6">What We Provide</h3>
+                    <p class="text-muted mb-6">To support your tax deduction claim, TaxAid Africa provides the following documentation:</p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </span>
+                            <span class="text-muted"><strong class="text-dark">Official Donation Receipt</strong> - A formal acknowledgment of your contribution with date, amount, and our registration details.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </span>
+                            <span class="text-muted"><strong class="text-dark">Organization Registration Details</strong> - Our CAC registration number and relevant nonprofit registration documentation.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </span>
+                            <span class="text-muted"><strong class="text-dark">Annual Donation Summary</strong> - For regular donors, we provide an annual summary of all contributions made during the tax year.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Section -->
+                <div class="bg-primary/5 rounded-2xl p-8 text-center">
+                    <h3 class="text-2xl font-bold text-dark mb-4">Questions About Tax Deductions?</h3>
+                    <p class="text-muted mb-6">Our team is happy to provide the documentation you need. Contact us for more information.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="contact.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white font-bold rounded-full transition-all">
+                            Contact Us
+                        </a>
+                        <a href="donate.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent hover:bg-accent-dark text-white font-bold rounded-full transition-all">
+                            Make a Donation
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
+    </main>
+    
+    <!-- Footer -->
+        <section class="py-16 sm:py-20 lg:py-24 bg-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+                
+                <div class="lg:col-span-1">
+                    <img src="../assets/images/logo.png" alt="TaxAid Africa" class="h-12 w-auto mb-6">
+                    <p class="text-white/70 mb-6 leading-relaxed">
+                        Making tax easier for everyone. We help individuals and small businesses navigate the Nigerian tax system with confidence.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.11.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-primary rounded-lg flex items-center justify-center transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-white/70 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="services.html" class="text-white/70 hover:text-white transition-colors">Our Services</a></li>
+                        <li><a href="volunteer.html" class="text-white/70 hover:text-white transition-colors">Volunteer</a></li>
+                        <li><a href="gethelp.html" class="text-white/70 hover:text-white transition-colors">Get Help</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="resources.html" class="text-white/70 hover:text-white transition-colors">Tax Guides</a></li>
+                        <li><a href="resources.html" class="text-white/70 hover:text-white transition-colors">Tax Calculator</a></li>
+                        <li><a href="resources.html#faq" class="text-white/70 hover:text-white transition-colors">FAQs</a></li>
+                        <li><a href="resources.html" class="text-white/70 hover:text-white transition-colors">News & Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-white/70">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            <span>Abuja, Nigeria</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            <span>info@taxaidafrica.org</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-5 h-5 mt-0.5 flex-shrink-0 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            <span>+234 800 000 0000</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-white/50 text-sm">&copy; 2024 TaxAid Africa. All rights reserved.</p>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="text-white/50 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-white/50 hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function openMobileMenu() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+        document.getElementById('mobile-menu-btn').addEventListener('click', openMobileMenu);
+        document.getElementById('mobile-menu-close').addEventListener('click', closeMobileMenu);
+    </script>
+</body>
+</html>

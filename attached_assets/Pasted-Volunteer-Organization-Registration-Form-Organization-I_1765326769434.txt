@@ -1,0 +1,44 @@
+Volunteer Organization Registration Form
+Organization Information:
+1.	Organization Name: 
+2.	Type of Organization:
+•	 Tax Consultancy Firm
+•	 Accounting Firm
+•	 Other (please specify):
+3.	Contact Person:
+•	Full Name:
+•	Position in the Organization:
+4.	Contact Information:
+•	Email Address:
+•	Phone Number:
+5.	Organization Address:
+•	Street Address:
+•	City:
+•	State/Province:
+•	ZIP Code:
+Services Offered: 6. Services Offered by the Organization:
+•	Check all that apply:
+•	 Tax Advisory
+•	 Tax Preparation
+•	 Financial Document Preparation
+•	 Audit Support
+•	 Other (please specify):
+Availability and Commitment: 7. Availability for Volunteer Work:
+•	Days of the Week: [ ] Monday [ ] Tuesday [ ] Wednesday [ ] Thursday [ ] Friday [ ] Saturday [ ] Sunday
+•	Time of Day: [ ] Morning [ ] Afternoon [ ] Evening
+8.	Commitment Level:
+•	Hours per Week Available for Volunteering: [ ] 5-10 hours [ ] 11-15 hours [ ] 16-20 hours [ ] 20+ hours
+Geographic Areas of Interest: 9. Geographic Areas Where Your Organization Can Provide Support:
+•	Please specify cities or states, 
+Expertise and Skills: 10. Taxation and Financial Skills: - Describe the key expertise and skills your organization possesses in supporting small businesses and vulnerable taxpayers.
+Motivation and Interests: 11. Why is your organization interested in volunteering with our NGO, and what specific goals do you hope to achieve by supporting small businesses and vulnerable taxpayers?
+References: 12. Professional References: - Please provide contact information for two professional references.
+Additional Information: 13. Additional Comments or Information: - Use this space to share any other relevant information or ask questions.
+Declaration: I hereby declare that the information provided above is true and accurate to the best of my knowledge.
+Signature:
+Date:
+Thank you for expressing interest in volunteering with TAXAID. We appreciate your organization's commitment to supporting small businesses and vulnerable taxpayers. 
+Please submit this form to [NGO Contact Information]. If you have any questions, feel free to contact us at [NGO Contact Email/Phone].
+
+Disclaimer:
+Please note that as a volunteer, the Taxaid and the organisations we support are under no obligation to pay for your service under our volunteer arrangement. However, a volunteer may be engage to provide services under other contractual agreement
