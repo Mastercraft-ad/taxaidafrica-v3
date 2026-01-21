@@ -56,6 +56,7 @@ function renderAdminHeader($title) {
                     <a href="settings.php" class="sidebar-link block py-2.5 px-4 rounded transition">General Settings</a>
                     <a href="users.php" class="sidebar-link block py-2.5 px-4 rounded transition">Admin Users</a>
                     <a href="logs.php" class="sidebar-link block py-2.5 px-4 rounded transition">System Logs</a>
+                    <a href="../index.html" class="sidebar-link block py-2.5 px-4 rounded transition text-accent-light hover:text-white mt-4">Exit Admin</a>
                 </div>
             </nav>
         </aside>

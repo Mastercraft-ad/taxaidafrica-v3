@@ -91,6 +91,13 @@ renderAdminHeader('Dashboard Overview');
                         <td class="py-4 text-gray-600">Chartered Accountant</td>
                         <td class="py-4"><button class="text-primary hover:underline">View</button></td>
                     </tr>
+                    <tr class="hover:bg-white/30 transition">
+                        <td class="py-4 font-bold">Amina Yusuf</td>
+                        <td class="py-4"><span class="px-2 py-1 bg-secondary/10 text-secondary-dark rounded-lg text-xs font-bold">Individual</span></td>
+                        <td class="py-4 text-gray-600">Abuja</td>
+                        <td class="py-4 text-gray-600">Tax Consultant</td>
+                        <td class="py-4"><button class="text-primary hover:underline">View</button></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -109,4 +116,4 @@ renderAdminHeader('Dashboard Overview');
         <a href="support.php" class="block text-center mt-6 text-sm font-bold text-primary hover:underline">View All Requests &rarr;</a>
     </section>
 </div>
-<?php renderAdminHeader(); ?>
+<?php renderAdminFooter(); ?>
