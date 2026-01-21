@@ -46,85 +46,97 @@
 <body class="min-h-screen bg-light font-sans text-dark antialiased">
     
     <!-- HEADER -->
-    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-custom border-b border-gray-100 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300 shadow-lg" id="navbar">
+        <!-- Unified Background Slider for Header (Synced with Hero) -->
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-100" id="header-bg-container">
+            <div id="header-slider" class="relative w-full h-full">
+                <div class="absolute inset-0 transition-opacity duration-1000 opacity-100 header-slide-item" style="background: url('../assets/images/hero-slides/slide1.jpg') center top no-repeat; background-size: cover;"></div>
+                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 header-slide-item" style="background: url('../assets/images/hero-slides/slide2.jpg') center top no-repeat; background-size: cover;"></div>
+                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 header-slide-item" style="background: url('../assets/images/hero-slides/slide3.jpg') center top no-repeat; background-size: cover;"></div>
+                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 header-slide-item" style="background: url('../assets/images/hero-slides/slide4.jpg') center top no-repeat; background-size: cover;"></div>
+                <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 header-slide-item" style="background: url('../assets/images/hero-slides/slide5.jpg') center top no-repeat; background-size: cover;"></div>
+            </div>
+            <!-- Matching Overlay (matching the hero exactly) -->
+            <div class="absolute inset-0 bg-gradient-to-br from-[#2D8CD5]/80 via-[#2D8CD5]/70 to-[#2470ab]/80"></div>
+            <div class="absolute inset-0 backdrop-blur-md"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 sm:h-18 lg:h-20">
                 
                 <a href="../index.html" class="flex-shrink-0 relative">
                     <img src="../assets/images/logo.png" alt="TaxAid Africa" class="h-8 sm:h-10 lg:h-12 w-auto transition-all duration-200">
-                    <span class="absolute top-1/2 -translate-y-1/2 -right-8 sm:-right-10 lg:-right-12 text-sm sm:text-base lg:text-lg font-hand font-bold text-primary transition-all duration-200">Africa</span>
                 </a>
                 
                 <nav class="hidden lg:flex items-center gap-8">
-                    <a href="../index.html#info" class="text-sm font-semibold text-muted hover:text-primary transition-colors">Tax Information</a>
+                    <a href="resources.html" class="text-[18px] font-semibold text-white/90 hover:text-white transition-colors">Tax Information</a>
                     <div class="relative group">
-                        <button type="button" aria-haspopup="true" aria-expanded="false" class="text-sm font-semibold text-muted hover:text-primary transition-colors flex items-center gap-1 focus:outline-none focus:text-primary">
+                        <button type="button" aria-haspopup="true" aria-expanded="false" class="text-[18px] font-semibold text-white/90 hover:text-white transition-colors flex items-center gap-1 focus:outline-none focus:text-white">
                             Support our work
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:rotate-180 group-focus-within:rotate-180"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </button>
                         <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200" role="menu">
-                            <ul class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 min-w-[220px]">
-                                <li><a href="donate.html" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Make a donation</a></li>
-                                <li><a href="partner.html" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Corporate partnerships</a></li>
-                                <li><a href="../index.html#gift" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Leave a gift in your will</a></li>
-                                <li><a href="../index.html#events" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Fundraising and Events</a></li>
-                                <li><a href="../index.html#volunteer" role="menuitem" class="block px-4 py-3 text-sm text-muted hover:text-primary hover:bg-primary/5 focus:text-primary focus:bg-primary/5 focus:outline-none transition-colors">Volunteer</a></li>
+                            <ul class="bg-[#1a5582]/80 backdrop-blur-xl rounded-xl shadow-xl border border-white/10 py-2 min-w-[220px]">
+                                <li><a href="donate.html" role="menuitem" class="block px-4 py-3 text-[18px] text-white/80 hover:text-white hover:bg-white/5 focus:text-white focus:bg-white/5 focus:outline-none transition-colors">Make a donation</a></li>
+                                <li><a href="partner.html" role="menuitem" class="block px-4 py-3 text-[18px] text-white/80 hover:text-white hover:bg-white/5 focus:text-white focus:bg-white/5 focus:outline-none transition-colors">Corporate partnerships</a></li>
+                                <li><a href="gift.html" role="menuitem" class="block px-4 py-3 text-[18px] text-white/80 hover:text-white hover:bg-white/5 focus:text-white focus:bg-white/5 focus:outline-none transition-colors">Leave a gift in your will</a></li>
+                                <li><a href="events.html" role="menuitem" class="block px-4 py-3 text-[18px] text-white/80 hover:text-white hover:bg-white/5 focus:text-white focus:bg-white/5 focus:outline-none transition-colors">Fundraising and Events</a></li>
+                                <li><a href="volunteer.html" role="menuitem" class="block px-4 py-3 text-[18px] text-white/80 hover:text-white hover:bg-white/5 focus:text-white focus:bg-white/5 focus:outline-none transition-colors">Volunteer</a></li>
                             </ul>
                         </div>
                     </div>
-                    <a href="about.html" class="text-sm font-semibold text-muted hover:text-primary transition-colors">About Us</a>
-                    <a href="contact.html" class="text-sm font-semibold text-primary transition-colors">Contact</a>
+                    <a href="about.html" class="text-[18px] font-semibold text-white/90 hover:text-white transition-colors">About Us</a>
+                    <a href="contact.html" class="text-[18px] font-semibold text-white/90 hover:text-white transition-colors">Contact</a>
                 </nav>
                 
                 <div class="hidden lg:flex items-center gap-3">
                     <a href="donate.html" class="px-5 py-2.5 bg-primary hover:bg-primary-dark text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-0.5">Donate</a>
-                    <a href="login.html" class="px-5 py-2.5 bg-accent hover:bg-accent-dark text-white text-sm font-bold rounded-full shadow-lg shadow-accent/20 hover:shadow-xl transition-all hover:-translate-y-0.5">Member Login</a>
+                    <a href="volunteer.html" class="px-5 py-2.5 bg-accent hover:bg-accent-dark text-white text-sm font-bold rounded-full shadow-lg shadow-accent/20 hover:shadow-xl transition-all hover:-translate-y-0.5">I Volunteer</a>
                 </div>
                 
                 <div class="flex lg:hidden items-center gap-2">
                     <a href="donate.html" class="hidden sm:inline-flex px-4 py-2 bg-primary text-white text-sm font-bold rounded-full">Donate</a>
-                    <button class="p-2 text-dark hover:bg-gray-100 rounded-lg transition-colors" id="mobile-menu-btn">
+                    <button class="p-2 text-white hover:bg-white/10 rounded-lg transition-colors" id="mobile-menu-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
                     </button>
                 </div>
             </div>
         </div>
+        
     </header>
     
-    <!-- Mobile Menu -->
-    <div class="hidden fixed inset-0 bg-white z-[100] overflow-y-auto" id="mobile-menu">
-        <div class="p-6">
+    <div class="hidden fixed inset-0 bg-transparent backdrop-blur-2xl z-[100] overflow-y-auto" id="mobile-menu">
+        <div class="absolute inset-0 bg-[#1a5582]/80 z-0"></div>
+        <div class="relative z-10 p-6">
             <div class="flex items-center justify-between mb-8">
                 <div class="relative">
                     <img src="../assets/images/logo.png" alt="TaxAid Africa" class="h-10 w-auto">
-                    <span class="absolute top-1/2 -translate-y-1/2 -right-10 text-base font-hand font-bold text-primary">Africa</span>
                 </div>
-                <button class="p-2 hover:bg-gray-100 rounded-lg" id="mobile-menu-close">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                <button class="p-2 hover:bg-white/10 rounded-lg" id="mobile-menu-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
                 </button>
             </div>
             <div class="space-y-3 mb-8">
                 <a href="donate.html" class="block w-full py-3 bg-primary text-white text-center font-bold rounded-xl">Donate</a>
-                <a href="login.html" class="block w-full py-3 bg-accent text-white text-center font-bold rounded-xl">Member Login</a>
+                <a href="volunteer.html" class="block w-full py-3 bg-accent text-white text-center font-bold rounded-xl">I Volunteer</a>
             </div>
             <div class="space-y-1">
-                <a href="../index.html" class="block py-4 text-lg font-medium border-b border-gray-100">Home</a>
-                <a href="../index.html#info" class="block py-4 text-lg font-medium border-b border-gray-100">Tax Information</a>
-                <div class="border-b border-gray-100">
-                    <button type="button" id="mobile-support-toggle" class="w-full flex items-center justify-between py-4 text-lg font-medium text-left" aria-expanded="false" aria-controls="mobile-support-submenu">
+                <a href="resources.html" class="block py-4 text-lg font-medium border-b border-white/10 text-white mobile-nav-link">Tax Information</a>
+                <div class="border-b border-white/10">
+                    <button type="button" id="mobile-support-toggle" class="w-full flex items-center justify-between py-4 text-lg font-medium text-left text-white" aria-expanded="false" aria-controls="mobile-support-submenu">
                         Support our work
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200" id="mobile-support-arrow"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </button>
                     <div id="mobile-support-submenu" class="hidden pb-3 pl-4">
-                        <a href="donate.html" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Make a donation</a>
-                        <a href="partner.html" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Corporate partnerships</a>
-                        <a href="../index.html#gift" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Leave a gift in your will</a>
-                        <a href="../index.html#events" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Fundraising and Events</a>
-                        <a href="../index.html#volunteer" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Volunteer</a>
+                        <a href="donate.html" class="block py-3 text-base text-white/70 hover:text-white transition-colors mobile-nav-link">Make a donation</a>
+                        <a href="partner.html" class="block py-3 text-base text-white/70 hover:text-white transition-colors mobile-nav-link">Corporate partnerships</a>
+                        <a href="gift.html" class="block py-3 text-base text-white/70 hover:text-white transition-colors mobile-nav-link">Leave a gift in your will</a>
+                        <a href="events.html" class="block py-3 text-base text-white/70 hover:text-white transition-colors mobile-nav-link">Fundraising and Events</a>
+                        <a href="volunteer.html" class="block py-3 text-base text-white/70 hover:text-white transition-colors mobile-nav-link">Volunteer</a>
                     </div>
                 </div>
-                <a href="about.html" class="block py-4 text-lg font-medium border-b border-gray-100">About Us</a>
-                <a href="contact.html" class="block py-4 text-lg font-medium border-b border-gray-100 text-primary">Contact</a>
+                <a href="about.html" class="block py-4 text-lg font-medium border-b border-white/10 text-white mobile-nav-link">About Us</a>
+                <a href="contact.html" class="block py-4 text-lg font-medium border-b border-white/10 text-white mobile-nav-link">Contact</a>
             </div>
         </div>
     </div>
