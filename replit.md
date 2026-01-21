@@ -4,9 +4,9 @@
 A website for TaxAid Africa, a non-profit organization dedicated to tax education and support in Africa. The site features volunteer signup, tax education resources, SME support services, request forms, a tax calculator tool, and an "Adopt A Tax Payer" donation system powered by Paystack.
 
 ## Running the Application
-The application runs using a Node.js/Express server on port 5000:
+The application runs using a PHP built-in server on port 5000:
 ```bash
-node server/index.js
+php -S 0.0.0.0:5000
 ```
 
 ## Project Structure
