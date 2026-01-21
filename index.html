@@ -1322,7 +1322,7 @@
 
                 // Adopt A Tax Payer Modal Logic
                 const statesData = {
-                    'nigeria': ['Lagos', 'Abuja FCT', 'Kano', 'Rivers', 'Oyo', 'Kaduna', 'Enugu', 'Delta', 'Ogun', 'Anambra'],
+                    'nigeria': ['Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi', 'Bayelsa', 'Benue', 'Borno', 'Cross River', 'Delta', 'Ebonyi', 'Edo', 'Ekiti', 'Enugu', 'FCT - Abuja', 'Gombe', 'Imo', 'Jigawa', 'Kaduna', 'Kano', 'Katsina', 'Kebbi', 'Kogi', 'Kwara', 'Lagos', 'Nasarawa', 'Niger', 'Ogun', 'Ondo', 'Osun', 'Oyo', 'Plateau', 'Rivers', 'Sokoto', 'Taraba', 'Yobe', 'Zamfara'],
                     'ghana': ['Greater Accra', 'Ashanti', 'Western', 'Eastern', 'Central', 'Northern'],
                     'kenya': ['Nairobi', 'Mombasa', 'Kisumu', 'Nakuru', 'Eldoret', 'Nyeri'],
                     'south-africa': ['Gauteng', 'Western Cape', 'KwaZulu-Natal', 'Eastern Cape', 'Limpopo', 'Mpumalanga']
@@ -1477,8 +1477,7 @@
                                         <h4 class="font-bold text-dark">${person.name}</h4>
                                         <p class="text-muted text-sm">${person.occupation}</p>
                                         <p class="text-primary text-sm mt-1">${person.need}</p>
-                                        <div class="flex items-center justify-between mt-3">
-                                            <span class="text-secondary-dark font-bold">${person.amount}</span>
+                                        <div class="flex items-center justify-end mt-3">
                                             <button onclick="adoptPerson('${person.name}')" class="px-4 py-2 bg-primary hover:bg-primary-dark text-white text-sm font-bold rounded-full transition-all">
                                                 Adopt
                                             </button>
