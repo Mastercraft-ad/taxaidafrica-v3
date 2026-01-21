@@ -47,6 +47,18 @@
                 linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
         }
         .backdrop-blur-custom { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+        .glass-header {
+            background: rgba(45, 140, 213, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-header-scrolled {
+            background: rgba(26, 85, 130, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
         .animate-float { animation: float 4s ease-in-out infinite; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -62,9 +74,9 @@
 <body class="min-h-screen bg-light font-sans text-dark antialiased">
     
     <!-- HEADER -->
-    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 shadow-lg" id="navbar">
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-header" id="navbar">
         <!-- Unified Background Slider for Header (Synced with Hero) -->
-        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-100" id="header-bg-container">
+        <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0" id="header-bg-container">
             <div id="header-slider" class="relative w-full h-full">
                 <div class="absolute inset-0 transition-opacity duration-1000 opacity-100 header-slide-item" style="background: url('assets/images/hero-slides/slide1.jpg') center top no-repeat; background-size: cover;"></div>
                 <div class="absolute inset-0 transition-opacity duration-1000 opacity-0 header-slide-item" style="background: url('assets/images/hero-slides/slide2.jpg') center top no-repeat; background-size: cover;"></div>
@@ -1688,36 +1700,66 @@
                 })();
             </script>
 
-            <script>
-                // Mobile menu toggle
-                document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-                    document.getElementById('mobile-menu').classList.remove('hidden');
-                    document.body.style.overflow = 'hidden';
-                });
+    <script>
+        const navbar = document.getElementById('navbar');
+        const headerBg = document.getElementById('header-bg-container');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-header-scrolled');
+                navbar.classList.remove('glass-header');
+                headerBg.classList.replace('opacity-0', 'opacity-100');
+            } else {
+                navbar.classList.add('glass-header');
+                navbar.classList.remove('glass-header-scrolled');
+                headerBg.classList.replace('opacity-100', 'opacity-0');
+            }
+        });
 
-                document.getElementById('mobile-menu-close').addEventListener('click', function() {
-                    document.getElementById('mobile-menu').classList.add('hidden');
-                    document.body.style.overflow = '';
-                });
+        // Hero Slider Logic
+        const slides = document.querySelectorAll('.slide-item');
+        const headerSlides = document.querySelectorAll('.header-slide-item');
+        let currentSlide = 0;
 
-                // Mobile support submenu toggle
-                document.getElementById('mobile-support-toggle').addEventListener('click', function() {
-                    const submenu = document.getElementById('mobile-support-submenu');
-                    const arrow = document.getElementById('mobile-support-arrow');
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        function nextSlide() {
+            slides[currentSlide].classList.replace('opacity-100', 'opacity-0');
+            headerSlides[currentSlide].classList.replace('opacity-100', 'opacity-0');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.replace('opacity-0', 'opacity-100');
+            headerSlides[currentSlide].classList.replace('opacity-0', 'opacity-100');
+        }
 
-                    this.setAttribute('aria-expanded', !isExpanded);
-                    submenu.classList.toggle('hidden');
-                    arrow.style.transform = isExpanded ? '' : 'rotate(180deg)';
-                });
+        setInterval(nextSlide, 5000);
 
-                // Close mobile menu when clicking nav links
-                document.querySelectorAll('.mobile-nav-link').forEach(link => {
-                    link.addEventListener('click', function() {
-                        document.getElementById('mobile-menu').classList.add('hidden');
-                        document.body.style.overflow = '';
-                    });
-                });
-            </script>
-        </body>
-        </html>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+
+        document.getElementById('mobile-menu-close').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+
+        // Mobile support submenu toggle
+        document.getElementById('mobile-support-toggle').addEventListener('click', function() {
+            const submenu = document.getElementById('mobile-support-submenu');
+            const arrow = document.getElementById('mobile-support-arrow');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+            this.setAttribute('aria-expanded', !isExpanded);
+            submenu.classList.toggle('hidden');
+            arrow.style.transform = isExpanded ? '' : 'rotate(180deg)';
+        });
+
+        // Close mobile menu when clicking nav links
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
+</body>
+</html>
