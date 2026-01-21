@@ -31,6 +31,15 @@ function renderAdminHeader($title) {
         .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
         .sidebar-link.active { background: rgba(255, 255, 255, 0.15); border-left: 4px solid #F2BC1C; font-weight: bold; }
     </style>
+    <!-- Table Export Library -->
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+    <script>
+        function exportTableToExcel(tableId, filename = '') {
+            const table = document.getElementById(tableId);
+            const wb = XLSX.utils.table_to_book(table, { sheet: "Sheet1" });
+            XLSX.writeFile(wb, filename ? filename + '.xlsx' : 'export.xlsx');
+        }
+    </script>
 </head>
 <body class="bg-light font-sans text-dark min-h-screen">
     <div class="flex">
