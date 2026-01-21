@@ -5,3 +5,4 @@
 [x] 5. Fixed broken #login links - created login.html page and updated all references
 [x] 6. Updated all pages in page/ folder with full footer from index.html
 [x] 7. Implemented glass header with scroll effect on index page
+[x] 8. Created Admin Dashboard (admin/dashboard.php) with PHP and Tailwind CSS layout
