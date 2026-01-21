@@ -72,7 +72,7 @@
                     <a href="contact.html" class="text-[18px] font-semibold text-white/90 hover:text-white transition-colors">Contact</a>
                 </nav>
                 <div class="hidden lg:flex items-center gap-3">
-                    <a href="donate.html" class="px-5 py-2.5 bg-primary hover:bg-primary-dark text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-0.5">Donate</a>
+                    <a href="donate.php" class="px-5 py-2.5 bg-primary hover:bg-primary-dark text-white text-sm font-bold rounded-full shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transition-all hover:-translate-y-0.5">Donate</a>
                 </div>
             </div>
         </div>
@@ -91,7 +91,7 @@
                 </button>
             </div>
             <div class="space-y-3 mb-8">
-                <a href="donate.html" class="block w-full py-3 bg-primary text-white text-center font-bold rounded-xl">Donate</a>
+                <a href="donate.php" class="block w-full py-3 bg-primary text-white text-center font-bold rounded-xl">Donate</a>
                 <a href="login.html" class="block w-full py-3 bg-accent text-white text-center font-bold rounded-xl">Member Login</a>
             </div>
             <div class="space-y-1">
@@ -103,7 +103,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200" id="mobile-support-arrow"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </button>
                     <div id="mobile-support-submenu" class="hidden pb-3 pl-4">
-                        <a href="donate.html" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Make a donation</a>
+                        <a href="donate.php" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Make a donation</a>
                         <a href="partner.html" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Corporate partnerships</a>
                         <a href="../index.html#gift" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Leave a gift in your will</a>
                         <a href="../index.html#events" class="block py-3 text-base text-muted hover:text-primary transition-colors mobile-nav-link">Fundraising and Events</a>
