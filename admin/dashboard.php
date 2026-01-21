@@ -57,25 +57,40 @@ renderAdminHeader('Dashboard Overview');
             <div class="flex flex-wrap gap-2">
                 <select class="text-sm bg-white border border-gray-200 rounded-xl px-3 py-2 outline-none">
                     <option>All Positions</option>
+                    <option>Individual</option>
+                    <option>Professional Firm</option>
                 </select>
                 <select class="text-sm bg-white border border-gray-200 rounded-xl px-3 py-2 outline-none">
                     <option>All States</option>
+                    <option>Lagos</option>
+                    <option>Abuja</option>
+                    <option>Rivers</option>
+                </select>
+                <select class="text-sm bg-white border border-gray-200 rounded-xl px-3 py-2 outline-none">
+                    <option>All Qualifications</option>
+                    <option>Chartered Accountant</option>
+                    <option>Tax Consultant</option>
+                    <option>Legal Practitioner</option>
                 </select>
             </div>
         </div>
         <div class="overflow-x-auto">
-            <table class="w-full text-left text-sm">
+            <table class="w-full text-left">
                 <thead class="text-xs text-gray-400 uppercase border-b">
                     <tr>
                         <th class="pb-4 font-bold">Volunteer Name</th>
                         <th class="pb-4 font-bold">Type</th>
+                        <th class="pb-4 font-bold">State</th>
+                        <th class="pb-4 font-bold">Qualification</th>
                         <th class="pb-4 font-bold">Action</th>
                     </tr>
                 </thead>
-                <tbody class="divide-y divide-gray-100">
+                <tbody class="text-sm divide-y divide-gray-100">
                     <tr class="hover:bg-white/30 transition">
                         <td class="py-4 font-bold">Chukwudi Obi</td>
                         <td class="py-4"><span class="px-2 py-1 bg-primary/10 text-primary rounded-lg text-xs font-bold">Professional</span></td>
+                        <td class="py-4 text-gray-600">Lagos</td>
+                        <td class="py-4 text-gray-600">Chartered Accountant</td>
                         <td class="py-4"><button class="text-primary hover:underline">View</button></td>
                     </tr>
                 </tbody>
@@ -96,4 +111,4 @@ renderAdminHeader('Dashboard Overview');
         <a href="support.php" class="block text-center mt-6 text-sm font-bold text-primary hover:underline">View All Requests &rarr;</a>
     </section>
 </div>
-<?php renderAdminFooter(); ?>
+<?php renderAdminHeader(); ?>
