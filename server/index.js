@@ -1,9 +1,18 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const phpExpress = require('php-express')();
 
 const app = express();
 const PORT = 5000;
+
+// Set view engine to php-express
+app.set('views', path.join(__dirname, '..'));
+app.engine('php', phpExpress.engine);
+app.set('view engine', 'php');
+
+// Route all .php requests to php-express
+app.all(/.+\.php$/, phpExpress.router);
 
 const PAYSTACK_SECRET_KEY = process.env.PAYSTACK_SECRET_KEY;
 
