@@ -8,3 +8,4 @@
 [x] 8. Created Admin Dashboard (admin/dashboard.php) with PHP and Tailwind CSS layout
 [x] 9. Completed Admin Dashboard design with comprehensive placeholder data and layout details
 [x] 10. Implemented Excel export functionality for all admin tables after sorting
+[x] 11. Designed MySQL Database schema for all project features (Volunteers, Support, Donations, Adoptions, Admins)
