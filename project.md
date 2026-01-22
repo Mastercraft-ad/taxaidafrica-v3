@@ -1,93 +1,74 @@
-# TaxAid Africa - Website with Paystack Donations
+# TaxAid Africa - Platform Overview
 
-## Overview
-A website for TaxAid Africa, a non-profit organization dedicated to tax education and support in Africa. The site features volunteer signup, tax education resources, SME support services, request forms, a tax calculator tool, and an "Adopt A Tax Payer" donation system powered by Paystack.
+## Project Summary
+TaxAid Africa is a comprehensive digital platform for a non-profit organization dedicated to tax education, advocacy, and support across Africa. The platform connects donors (Adopters) with beneficiaries (Taxpayers in need) and coordinates professional volunteers to provide expert tax assistance.
+
+## Technology Stack
+- **Frontend**: HTML5, Tailwind CSS (via CDN), Vanilla JavaScript.
+- **Backend**: PHP (8.2+) with session management and PDO.
+- **Database**: 
+  - **Production (Replit)**: PostgreSQL (Managed).
+  - **Local (Laragon)**: MySQL 8.0+ (InnoDB engine).
+- **Payment Integration**: Paystack API for donations.
+- **Design System**: 
+  - Primary: #2D8CD5 (Blue)
+  - Secondary: #F2BC1C (Yellow)
+  - Accent: #E64249 (Red)
+  - Fonts: DM Sans (Sans-serif) & Architects Daughter (Handwritten).
 
 ## Project Structure
 ```
-index.html                 - Main HTML page (all sections)
-assets/
-  css/style.css           - Main stylesheet (Tailwind-inspired)
-  images/                 - Stock images for sections
-page/
-  about.html              - About Us page
-  contact.html            - Contact page
-  donate.html             - Donations page
-  gethelp.html            - Get Help page
-  resources.html          - Resources page
-  services.html           - Services page
-  volunteer-individual.html - Individual volunteer registration form
-  volunteer-firm.html     - Professional firm volunteer registration form
-server/
-  index.js                - Express backend with Paystack integration
+/                      - Root (Public index.html, license, docs)
+├── admin/             - Administrative Dashboard
+│   ├── includes/      - Admin logic (Matchmaker system)
+│   ├── adoptions.php  - Donor-Beneficiary matching interface
+│   ├── login.php      - Secure admin authentication
+│   └── ...            - Other management modules
+├── api/               - Backend API endpoints (Form processing)
+├── assets/            - Static assets (CSS, Images, Hero slides)
+├── database/          - Database artifacts (MySQL/PostgreSQL schema)
+├── includes/          - Shared backend utilities (DB connection)
+└── page/              - Public sub-pages (About, Donate, Volunteer, etc.)
 ```
 
-## Key Features
-- **Hero Section**: Full-width with worker image and CTAs
-- **Adopt A Tax Payer**: Multi-step modal popup for adopting/supporting taxpayers
-  - Individual path: Country → State → People list with sample data
-  - Corporate path: Industry → Business list with sample data
-  - Countries: Nigeria, Ghana, Kenya, South Africa with states/regions
-  - Industries: Retail, Agriculture, Manufacturing, Services, Technology
-- **Volunteer Signup**: Modal-based volunteer type selection with dedicated registration forms
-  - Individual Volunteer Form: Personal info, professional background, skills, availability
-  - Professional Firm Form: Organization info, services offered, geographic coverage
-- **Support Request Form**: Client-side form handling with JavaScript
-- **Tax Calculator**: PAYE/Income Tax and VAT calculation with JavaScript
-- **Responsive Design**: Mobile-friendly with custom CSS
+## Core Features & Functionality
 
-## Design System
-- **Primary Color**: #208D71 (Teal)
-- **Secondary Color**: #F2BC1C (Yellow/Gold)
-- **Accent Color**: #E64249 (Pink/Red)
-- **Fonts**: DM Sans (sans-serif) + Architects Daughter (handwritten)
+### 1. Matchmaking System
+- **Logic**: A sophisticated ranking algorithm that scores matches based on:
+  - **Status Match**: Linking Individual/SME donors to corresponding beneficiaries.
+  - **Sector Alignment**: Matching by industry (e.g., Retail, Manufacturing).
+  - **Geographic Match**: Connecting based on location/state.
+  - **Priority Boost**: Surfacing high-priority assistance requests.
+- **Admin Interface**: Dedicated UI for manual review and "One-Click Linking" of donors to beneficiaries.
 
-## Running the Application
-The application runs using Node.js/Express server on port 5000 with Stripe integration.
+### 2. Adoption & Assistance Flow
+- **Adopt A Taxpayer**: Multi-step flow for donors to express interest in supporting specific taxpayer groups.
+- **Request Tax Assistance**: Specialized portal for financially vulnerable individuals and SMEs to request professional tax aid.
 
-```bash
-node server/index.js
-```
+### 3. Volunteer Coordination
+- **Individual Path**: For tax professionals, accountants, and legal practitioners.
+- **Firm Path**: For professional services firms offering corporate social responsibility (CSR) support.
 
-## Paystack Integration
-- **Paystack Checkout**: Secure payment processing via Paystack transaction initialization
-- **Donation Flow**: Users select a taxpayer → choose amount (₦5,000, ₦10,000, ₦25,000) → redirect to Paystack → return on success
-- **Environment Variables Required**: PAYSTACK_SECRET_KEY, PAYSTACK_PUBLIC_KEY
+### 4. Administrative Portal
+- **Secure Access**: Session-based auth with hashed passwords and last-login tracking.
+- **Demo Credentials**: `taxadmininfo` / `taxaidafrica247247` (For demonstration purposes).
+- **Responsive Dashboard**: Fully mobile-optimized interface with a slide-out sidebar for on-the-go management.
+- **Data Export**: Integrated "Export to Excel" functionality for all data tables.
 
-## Form Handling
-Forms are processed entirely client-side with JavaScript:
-- **Support Request Form**: Shows success message after submission
-- **Tax Calculator**: Calculates and displays results in real-time
+## Deployment & Setup
 
-## Tax Calculation Logic
-### Personal Income Tax (PAYE)
-- Consolidated Relief Allowance (CRA): Max(200,000, 1% of income) + 20% of income
-- First 300,000 of taxable income: 7%
-- Remainder: 20%
+### Local Setup (Laragon)
+1. Clone the project into Laragon's `www` directory.
+2. Create a MySQL database named `taxaid_africa`.
+3. Import `database/schema.sql`.
+4. The system automatically detects the local environment and uses standard `root` credentials.
 
-### VAT
-- Standard rate: 7.5%
+### Production (Replit)
+1. Provision a PostgreSQL database via Replit tools.
+2. Apply the PostgreSQL-optimized schema.
+3. Configure `PAYSTACK_SECRET_KEY` and `PAYSTACK_PUBLIC_KEY` as Secrets.
 
-## Recent Changes
-- December 9, 2025: Added Stripe donation flow to "Adopt A Tax Payer" feature
-  - Integrated Stripe Checkout for secure payment processing
-  - Added donation step with preset amounts ($25, $50, $100) and custom amount option
-  - Created Express backend (server/index.js) with Stripe API integration
-  - Added success/cancel handling for Stripe redirects
-- December 9, 2025: Added "Adopt A Tax Payer" feature
-  - Changed hero button from "I need help with tax" to "Adopt A Tax Payer"
-  - Created multi-step modal popup with Individual and Corporate taxpayer paths
-  - Individual flow: Country → State → List of people requesting support
-  - Corporate flow: Industry → List of businesses requesting support
-  - Sample data for 4 African countries and 5 industries
-- December 8, 2025: Major design update aligned with TAX-AID profile document
-  - Redesigned About section with Mission & Vision split layout + CAC registration badge
-  - Replaced Services with 9 Activities grid (Educate/Support/Advocate themes)
-  - Enhanced I-VOLUNTEER section with professional volunteer categories
-  - Added Governance section with Advisory Board and Executive Council
-  - Added Donate section with Individual, Corporate, and Tax-Deductible options
-- December 8, 2025: Converted from PHP backend to frontend-only static site
-- All PHP includes combined into single index.html
-- Tax calculator now uses client-side JavaScript
-- Support form uses JavaScript for client-side handling
-- Static file server replaces PHP development server
+## Recent Architectural Decisions (Jan 2026)
+- **Removed Legacy Modules**: General Settings, Admin User management, and System Logs were removed to streamline the MVP.
+- **Responsiveness**: Rebuilt the admin sidebar and header layout to handle mobile viewport constraints.
+- **Database Portability**: Implemented a dual-compatible schema and a flexible connection handler for easy local-to-cloud migration.
