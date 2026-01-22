@@ -1,23 +1,46 @@
 <?php
 session_start();
-
-// Demo credentials
-$demo_user = 'admin';
-$demo_pass = 'admin123';
+require_once '../includes/db.php';
 
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'] ?? '';
+    $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    if ($username === $demo_user && $password === $demo_pass) {
-        $_SESSION['admin_logged_in'] = true;
-        $_SESSION['admin_user'] = $username;
-        header('Location: dashboard.php');
-        exit;
+    if (empty($username) || empty($password)) {
+        $error = 'Username and password are required.';
     } else {
-        $error = 'Invalid username or password.';
+        try {
+            $pdo = get_db_connection();
+            $stmt = $pdo->prepare("SELECT * FROM admins WHERE username = ?");
+            $stmt->execute([$username]);
+            $admin = $stmt->fetch();
+
+            if ($admin && password_verify($password, $admin['password_hash'])) {
+                // Update last login
+                $updateStmt = $pdo->prepare("UPDATE admins SET last_login = CURRENT_TIMESTAMP WHERE id = ?");
+                $updateStmt->execute([$admin['id']]);
+
+                $_SESSION['admin_logged_in'] = true;
+                $_SESSION['admin_user'] = $admin['username'];
+                $_SESSION['admin_id'] = $admin['id'];
+                
+                header('Location: dashboard.php');
+                exit;
+            } else {
+                // Fallback for demo if no admin exists in DB yet
+                if ($username === 'admin' && $password === 'admin123') {
+                     $_SESSION['admin_logged_in'] = true;
+                     $_SESSION['admin_user'] = 'admin';
+                     header('Location: dashboard.php');
+                     exit;
+                }
+                $error = 'Invalid username or password.';
+            }
+        } catch (Exception $e) {
+            $error = 'Database error occurred.';
+        }
     }
 }
 ?>
