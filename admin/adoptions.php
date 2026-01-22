@@ -4,17 +4,10 @@ require_once 'includes/Matchmaker.php';
 renderAdminHeader('Taxpayer Adoptions');
 
 // Demo Data for Beneficiaries (Those requesting tax assistance)
-$beneficiaries = [
-    ['id' => 1, 'name' => 'John Doe', 'type' => 'individual', 'category' => 'Artisan', 'location' => 'Lagos', 'priority' => 'high', 'description' => 'Needs help with PAYE back taxes.'],
-    ['id' => 2, 'name' => 'Fast Lane Logistics', 'type' => 'sme', 'category' => 'Transport', 'location' => 'Abuja', 'priority' => 'medium', 'description' => 'VAT compliance for new startup.'],
-    ['id' => 3, 'name' => 'Mama Put Catering', 'type' => 'sme', 'category' => 'Food Services', 'location' => 'Rivers', 'priority' => 'low', 'description' => 'Tax registration and ID acquisition.'],
-];
+$beneficiaries = [];
 
 // Demo Data for Adoption Interests (Donors)
-$adoption_interests = [
-    ['id' => 101, 'name' => 'Aliko Foundation', 'preferred_type' => 'sme', 'preferred_category' => 'Transport', 'preferred_location' => 'Abuja'],
-    ['id' => 102, 'name' => 'Sarah Williams', 'preferred_type' => 'individual', 'preferred_category' => 'Artisan', 'preferred_location' => 'Lagos'],
-];
+$adoption_interests = [];
 
 $matchmaker = new Matchmaker();
 ?>

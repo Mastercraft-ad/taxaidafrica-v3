@@ -26,20 +26,7 @@ renderAdminHeader('Support Requests');
                 </tr>
             </thead>
             <tbody>
-                <!-- Sample Data (Amounts removed as requested) -->
-                <tr class="border-b border-gray-50 hover:bg-white/30 transition-all">
-                    <td class="py-4 text-sm">Jan 21, 2026</td>
-                    <td class="py-4 text-sm font-medium">Bolanle Adeyemi</td>
-                    <td class="py-4 text-sm">Individual</td>
-                    <td class="py-4 text-sm">Lagos</td>
-                    <td class="py-4 text-sm max-w-xs truncate">Small scale trader needing help with PIT filing and TIN registration.</td>
-                    <td class="py-4 text-sm">
-                        <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">Awaiting Match</span>
-                    </td>
-                    <td class="py-4 text-sm">
-                        <button class="text-primary hover:underline font-medium">View</button>
-                    </td>
-                </tr>
+                <tr><td colspan="7" class="py-10 text-center text-gray-400">No support requests found.</td></tr>
             </tbody>
         </table>
     </div>
