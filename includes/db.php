@@ -4,10 +4,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 function get_db_connection() {
-    $host = '127.0.0.1'; // Using IP is sometimes more reliable than 'localhost' on Windows
-    $db   = 'taxavdij_taxafricv2';
-    $user = 'taxavdij_taxafricv2'; // Laragon default
-    $pass = 'taxafricv2taxafricv2'; // Laragon default is empty
+    $host = getenv('DB_HOST') ?: '127.0.0.1';
+    $db   = getenv('DB_NAME') ?: 'taxaid_africa';
+    $user = getenv('DB_USER') ?: 'root';
+    $pass = getenv('DB_PASS') ?: '';
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
