@@ -264,14 +264,17 @@
         adoptForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
-            // In a real scenario, we would use fetch to submit the data
-            // For now, we simulate the transition
+            const formData = new FormData(adoptForm);
+            
+            // Instantly transition to success state to build trust
             formContainer.classList.add('hidden');
             successState.classList.remove('hidden');
             
-            // We can also trigger the actual form submission in the background if needed
-            // const formData = new FormData(adoptForm);
-            // fetch(adoptForm.action, { method: 'POST', body: formData });
+            // Send data to backend
+            fetch('../api/adopt_process.php', {
+                method: 'POST',
+                body: formData
+            });
         });
     </script>
 </body>

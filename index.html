@@ -1580,22 +1580,77 @@
                     previousStep: ''
                 };
 
+                function onCountryChange() {
+                    const countrySelect = document.getElementById('country-select');
+                    if (!countrySelect) return;
+                    
+                    const country = countrySelect.value;
+                    const stateContainer = document.getElementById('state-select-container');
+                    const comingSoon = document.getElementById('coming-soon-container');
+                    
+                    if (country === 'nigeria') {
+                        stateContainer.classList.remove('hidden');
+                        comingSoon.classList.add('hidden');
+                    } else {
+                        stateContainer.classList.add('hidden');
+                        comingSoon.classList.remove('hidden');
+                    }
+                }
+
+                // Global form submission handler for adoption
+                document.addEventListener('submit', function(e) {
+                    if (e.target && e.target.id === 'adopt-form') {
+                        e.preventDefault();
+                        const form = e.target;
+                        const formData = new FormData(form);
+                        
+                        // Instantly show success state
+                        document.getElementById('adopt-form-content').classList.add('hidden');
+                        document.getElementById('adopt-success-state').classList.remove('hidden');
+                        
+                        // Send data to backend
+                        fetch('api/adopt_process.php', {
+                            method: 'POST',
+                            body: formData
+                        });
+                    }
+                });
+
                 function adoptPerson(name, occupation, need) {
+                    // Send interest to backend
+                    const formData = new FormData();
+                    formData.append('adoption_type', 'individual');
+                    formData.append('name', 'Anonymous Adopter');
+                    formData.append('email', 'pending@match.taxaid');
+                    formData.append('preferred_state', selectedState || '');
+                    formData.append('message', `Interested in matching with: ${name} (${occupation}) - ${need}`);
+                    
+                    fetch('api/adopt_process.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+
                     // Instantly transition to success state to build trust
                     document.querySelectorAll('#adopt-modal [id^="adopt-step-"]').forEach(el => el.classList.add('hidden'));
                     document.getElementById('adopt-step-success').classList.remove('hidden');
-                    
-                    // Logic to notify admin for matchmaking would happen here
-                    console.log("Notifying admin for matchmaking with person:", name);
                 }
 
                 function adoptBusiness(name) {
+                    // Send interest to backend
+                    const formData = new FormData();
+                    formData.append('adoption_type', 'corporate');
+                    formData.append('name', 'Anonymous Adopter');
+                    formData.append('email', 'pending@match.taxaid');
+                    formData.append('message', `Interested in matching with business: ${name}`);
+                    
+                    fetch('api/adopt_process.php', {
+                        method: 'POST',
+                        body: formData
+                    });
+
                     // Instantly transition to success state to build trust
                     document.querySelectorAll('#adopt-modal [id^="adopt-step-"]').forEach(el => el.classList.add('hidden'));
                     document.getElementById('adopt-step-success').classList.remove('hidden');
-                    
-                    // Logic to notify admin for matchmaking would happen here
-                    console.log("Notifying admin for matchmaking with business:", name);
                 }
 
                 function formatNaira(amount) {
