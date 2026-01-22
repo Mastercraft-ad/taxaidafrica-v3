@@ -1281,10 +1281,12 @@
                         <!-- Success Step -->
                         <div id="adopt-step-success" class="hidden p-8 text-center">
                             <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><polyline points="20 6 9 17 4 12"></polyline></svg>
                             </div>
-                            <h3 class="text-2xl font-bold text-dark mb-3">Thank You!</h3>
-                            <p class="text-muted mb-6" id="success-message">You've chosen to support John Adebayo. Our team will contact you shortly with more details.</p>
+                            <h3 class="text-2xl font-bold text-dark mb-4">Thank you for taking the first step to change a life!</h3>
+                            <p class="text-muted leading-relaxed mb-8">
+                                We have received your interest. Our matching team will process your request and connect you with a taxpayer who fits your preferences shortly.
+                            </p>
                             <button onclick="closeAdoptModal()" class="px-8 py-3 bg-primary hover:bg-primary-dark text-white font-bold rounded-full transition-all">
                                 Close
                             </button>
@@ -1579,33 +1581,21 @@
                 };
 
                 function adoptPerson(name, occupation, need) {
-                    const person = samplePeople[selectedState]?.find(p => p.name === name) || samplePeople['default'][0];
-
-                    currentDonation = {
-                        name: person.name,
-                        type: 'individual',
-                        details: person.occupation,
-                        need: person.need,
-                        amount: 50,
-                        previousStep: 'individual-people'
-                    };
-
-                    showDonationStep();
+                    // Instantly transition to success state to build trust
+                    document.querySelectorAll('#adopt-modal [id^="adopt-step-"]').forEach(el => el.classList.add('hidden'));
+                    document.getElementById('adopt-step-success').classList.remove('hidden');
+                    
+                    // Logic to notify admin for matchmaking would happen here
+                    console.log("Notifying admin for matchmaking with person:", name);
                 }
 
                 function adoptBusiness(name) {
-                    const business = sampleBusinesses[selectedIndustry]?.find(b => b.name === name);
-
-                    currentDonation = {
-                        name: business.name,
-                        type: 'corporate',
-                        details: business.type + ' - ' + business.employees,
-                        need: business.need,
-                        amount: 50,
-                        previousStep: 'corporate-businesses'
-                    };
-
-                    showDonationStep();
+                    // Instantly transition to success state to build trust
+                    document.querySelectorAll('#adopt-modal [id^="adopt-step-"]').forEach(el => el.classList.add('hidden'));
+                    document.getElementById('adopt-step-success').classList.remove('hidden');
+                    
+                    // Logic to notify admin for matchmaking would happen here
+                    console.log("Notifying admin for matchmaking with business:", name);
                 }
 
                 function formatNaira(amount) {

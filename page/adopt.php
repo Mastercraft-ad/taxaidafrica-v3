@@ -121,101 +121,78 @@
 
                     <!-- Right: Form -->
                     <div class="bg-white rounded-3xl p-8 lg:p-10 shadow-xl border border-gray-100 animate-fade-in animate-delay-200">
-                        <h3 class="text-2xl font-bold text-dark mb-6">Start Your Adoption Journey</h3>
-                        <form action="../api/adopt_process.php" method="POST" class="space-y-6">
-                            <div>
-                                <label class="block text-sm font-semibold text-dark mb-2">I want to adopt a...</label>
-                                <div class="grid grid-cols-2 gap-4">
-                                    <label class="relative flex items-center justify-center p-4 border-2 border-gray-100 rounded-xl cursor-pointer hover:border-primary transition-all">
-                                        <input type="radio" name="adoption_type" value="individual" required class="absolute opacity-0">
-                                        <span class="font-bold text-dark">Individual</span>
-                                    </label>
-                                    <label class="relative flex items-center justify-center p-4 border-2 border-gray-100 rounded-xl cursor-pointer hover:border-primary transition-all">
-                                        <input type="radio" name="adoption_type" value="corporate" required class="absolute opacity-0">
-                                        <span class="font-bold text-dark">Corporate/SME</span>
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="grid sm:grid-cols-2 gap-6">
+                        <div id="adopt-form-container">
+                            <h3 class="text-2xl font-bold text-dark mb-6">Start Your Adoption Journey</h3>
+                            <form id="adopt-page-form" action="../api/adopt_process.php" method="POST" class="space-y-6">
                                 <div>
-                                    <label class="block text-sm font-semibold text-dark mb-2">Your Full Name</label>
-                                    <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-primary">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-semibold text-dark mb-2">Email Address</label>
-                                    <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-primary">
-                                </div>
-                            </div>
-
-                            <div class="grid sm:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-semibold text-dark mb-2">Country</label>
-                                    <select id="country-select" name="country" required class="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none bg-white focus:border-primary">
-                                        <option value="Nigeria" selected>Nigeria</option>
-                                        <option value="Other">Other Countries</option>
-                                    </select>
-                                </div>
-                                <div id="state-container">
-                                    <label class="block text-sm font-semibold text-dark mb-2">Preferred State (Optional)</label>
-                                    <select name="preferred_state" class="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none bg-white focus:border-primary">
-                                        <option value="">Anywhere in Nigeria</option>
-                                        <option value="Abia">Abia</option>
-                                        <option value="Adamawa">Adamawa</option>
-                                        <option value="Akwa Ibom">Akwa Ibom</option>
-                                        <option value="Anambra">Anambra</option>
-                                        <option value="Bauchi">Bauchi</option>
-                                        <option value="Bayelsa">Bayelsa</option>
-                                        <option value="Benue">Benue</option>
-                                        <option value="Borno">Borno</option>
-                                        <option value="Cross River">Cross River</option>
-                                        <option value="Delta">Delta</option>
-                                        <option value="Ebonyi">Ebonyi</option>
-                                        <option value="Edo">Edo</option>
-                                        <option value="Ekiti">Ekiti</option>
-                                        <option value="Enugu">Enugu</option>
-                                        <option value="FCT - Abuja">FCT - Abuja</option>
-                                        <option value="Gombe">Gombe</option>
-                                        <option value="Imo">Imo</option>
-                                        <option value="Jigawa">Jigawa</option>
-                                        <option value="Kaduna">Kaduna</option>
-                                        <option value="Kano">Kano</option>
-                                        <option value="Katsina">Katsina</option>
-                                        <option value="Kebbi">Kebbi</option>
-                                        <option value="Kogi">Kogi</option>
-                                        <option value="Kwara">Kwara</option>
-                                        <option value="Lagos">Lagos</option>
-                                        <option value="Nasarawa">Nasarawa</option>
-                                        <option value="Niger">Niger</option>
-                                        <option value="Ogun">Ogun</option>
-                                        <option value="Ondo">Ondo</option>
-                                        <option value="Osun">Osun</option>
-                                        <option value="Oyo">Oyo</option>
-                                        <option value="Plateau">Plateau</option>
-                                        <option value="Rivers">Rivers</option>
-                                        <option value="Sokoto">Sokoto</option>
-                                        <option value="Taraba">Taraba</option>
-                                        <option value="Yobe">Yobe</option>
-                                        <option value="Zamfara">Zamfara</option>
-                                    </select>
-                                </div>
-                                <div id="coming-soon-container" class="hidden">
-                                    <label class="block text-sm font-semibold text-dark mb-2">Status</label>
-                                    <div class="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-muted italic">
-                                        Coming Soon...
+                                    <label class="block text-sm font-semibold text-dark mb-2">I want to adopt a...</label>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <label class="relative flex items-center justify-center p-4 border-2 border-gray-100 rounded-xl cursor-pointer hover:border-primary transition-all">
+                                            <input type="radio" name="adoption_type" value="individual" required class="absolute opacity-0">
+                                            <span class="font-bold text-dark">Individual</span>
+                                        </label>
+                                        <label class="relative flex items-center justify-center p-4 border-2 border-gray-100 rounded-xl cursor-pointer hover:border-primary transition-all">
+                                            <input type="radio" name="adoption_type" value="corporate" required class="absolute opacity-0">
+                                            <span class="font-bold text-dark">Corporate/SME</span>
+                                        </label>
                                     </div>
                                 </div>
-                            </div>
+                                
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-dark mb-2">Your Full Name</label>
+                                        <input type="text" name="name" required class="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-primary">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-semibold text-dark mb-2">Email Address</label>
+                                        <input type="email" name="email" required class="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-primary">
+                                    </div>
+                                </div>
 
-                            <div>
-                                <label class="block text-sm font-semibold text-dark mb-2">Message or Special Instructions</label>
-                                <textarea name="message" rows="3" class="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-primary resize-none" placeholder="Tell us if you have any specific preferences..."></textarea>
-                            </div>
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-semibold text-dark mb-2">Country</label>
+                                        <select id="country-select" name="country" required class="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none bg-white focus:border-primary">
+                                            <option value="Nigeria" selected>Nigeria</option>
+                                            <option value="Other">Other Countries</option>
+                                        </select>
+                                    </div>
+                                    <div id="state-container">
+                                        <label class="block text-sm font-semibold text-dark mb-2">Preferred State (Optional)</label>
+                                        <select name="preferred_state" class="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none bg-white focus:border-primary">
+                                            <option value="">Anywhere in Nigeria</option>
+                                            <option value="Abia">Abia</option><option value="Adamawa">Adamawa</option><option value="Akwa Ibom">Akwa Ibom</option><option value="Anambra">Anambra</option><option value="Bauchi">Bauchi</option><option value="Bayelsa">Bayelsa</option><option value="Benue">Benue</option><option value="Borno">Borno</option><option value="Cross River">Cross River</option><option value="Delta">Delta</option><option value="Ebonyi">Ebonyi</option><option value="Edo">Edo</option><option value="Ekiti">Ekiti</option><option value="Enugu">Enugu</option><option value="FCT - Abuja">FCT - Abuja</option><option value="Gombe">Gombe</option><option value="Imo">Imo</option><option value="Jigawa">Jigawa</option><option value="Kaduna">Kaduna</option><option value="Kano">Kano</option><option value="Katsina">Katsina</option><option value="Kebbi">Kebbi</option><option value="Kogi">Kogi</option><option value="Kwara">Kwara</option><option value="Lagos">Lagos</option><option value="Nasarawa">Nasarawa</option><option value="Niger">Niger</option><option value="Ogun">Ogun</option><option value="Ondo">Ondo</option><option value="Osun">Osun</option><option value="Oyo">Oyo</option><option value="Plateau">Plateau</option><option value="Rivers">Rivers</option><option value="Sokoto">Sokoto</option><option value="Taraba">Taraba</option><option value="Yobe">Yobe</option><option value="Zamfara">Zamfara</option>
+                                        </select>
+                                    </div>
+                                    <div id="coming-soon-container" class="hidden">
+                                        <label class="block text-sm font-semibold text-dark mb-2">Status</label>
+                                        <div class="px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-muted italic">
+                                            Coming Soon...
+                                        </div>
+                                    </div>
+                                </div>
 
-                            <button type="submit" class="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-primary-dark transition-all text-lg">
-                                Submit Interest
-                            </button>
-                        </form>
+                                <div>
+                                    <label class="block text-sm font-semibold text-dark mb-2">Message or Special Instructions</label>
+                                    <textarea name="message" rows="3" class="w-full px-4 py-3 border border-gray-200 rounded-xl outline-none focus:border-primary resize-none" placeholder="Tell us if you have any specific preferences..."></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full py-4 bg-primary text-white font-bold rounded-xl shadow-lg hover:bg-primary-dark transition-all text-lg">
+                                    Submit Interest
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Success State (Hidden by default) -->
+                        <div id="adopt-success-state" class="hidden text-center py-8">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            </div>
+                            <h4 class="text-2xl font-bold text-dark mb-4">Thank you for taking the first step to change a life!</h4>
+                            <p class="text-muted leading-relaxed">
+                                We have received your interest. Our matching team will process your request and connect you with a taxpayer who fits your preferences shortly.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,6 +254,24 @@
                 stateContainer.classList.add('hidden');
                 comingSoonContainer.classList.remove('hidden');
             }
+        });
+
+        // Form submission logic
+        const adoptForm = document.getElementById('adopt-page-form');
+        const formContainer = document.getElementById('adopt-form-container');
+        const successState = document.getElementById('adopt-success-state');
+
+        adoptForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // In a real scenario, we would use fetch to submit the data
+            // For now, we simulate the transition
+            formContainer.classList.add('hidden');
+            successState.classList.remove('hidden');
+            
+            // We can also trigger the actual form submission in the background if needed
+            // const formData = new FormData(adoptForm);
+            // fetch(adoptForm.action, { method: 'POST', body: formData });
         });
     </script>
 </body>

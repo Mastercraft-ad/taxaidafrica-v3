@@ -34,7 +34,7 @@ renderAdminHeader('Support Requests');
                     <td class="py-4 text-sm">Lagos</td>
                     <td class="py-4 text-sm max-w-xs truncate">Small scale trader needing help with PIT filing and TIN registration.</td>
                     <td class="py-4 text-sm">
-                        <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs">Pending</span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs">Awaiting Match</span>
                     </td>
                     <td class="py-4 text-sm">
                         <button class="text-primary hover:underline font-medium">View</button>
