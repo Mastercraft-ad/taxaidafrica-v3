@@ -65,6 +65,7 @@ function renderAdminHeader($title) {
                 <a href="donations.php" class="sidebar-link block py-2.5 px-4 rounded transition">Donations</a>
                 <a href="volunteers.php" class="sidebar-link block py-2.5 px-4 rounded transition">Volunteers</a>
                 <a href="support.php" class="sidebar-link block py-2.5 px-4 rounded transition">Support Requests</a>
+                <a href="adoptions.php" class="sidebar-link block py-2.5 px-4 rounded transition">Taxpayer Adoptions</a>
                 <div class="pt-6">
                     <a href="?logout=1" class="sidebar-link block py-2.5 px-4 rounded transition text-accent-light hover:text-white mt-4">Logout</a>
                 </div>
