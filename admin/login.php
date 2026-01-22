@@ -30,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 exit;
             } else {
                 // Fallback for demo if no admin exists in DB yet
-                if ($username === 'admin' && $password === 'admin123') {
+                if ($username === 'taxadmininfo' && $password === 'taxaidafrica247247') {
                      $_SESSION['admin_logged_in'] = true;
-                     $_SESSION['admin_user'] = 'admin';
+                     $_SESSION['admin_user'] = 'taxadmininfo';
                      header('Location: dashboard.php');
                      exit;
                 }
@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
         
         <div class="mt-8 pt-6 border-t border-gray-100 text-center">
-            <p class="text-xs text-gray-400">Demo Access: admin / admin123</p>
+            <p class="text-xs text-gray-400">Demo Access: taxadmininfo / taxaidafrica247247</p>
         </div>
     </div>
 </body>
