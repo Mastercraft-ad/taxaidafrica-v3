@@ -74,10 +74,6 @@ function renderAdminHeader($title) {
             <header class="flex justify-between items-center mb-10">
                 <h1 class="text-3xl font-bold"><?php echo $title; ?></h1>
                 <div class="flex items-center gap-4">
-                    <div class="flex items-center gap-3 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
-                        <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center font-bold text-dark text-xs">AD</div>
-                        <span class="text-sm font-bold">Admin</span>
-                    </div>
                 </div>
             </header>
 <?php
