@@ -1,6 +1,9 @@
 <?php
-// Admin Navigation & Common Layout - TaxAid Africa
+require_once 'auth.php';
+handleLogout();
+
 function renderAdminHeader($title) {
+    checkAdminAuth();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +59,7 @@ function renderAdminHeader($title) {
                     <a href="settings.php" class="sidebar-link block py-2.5 px-4 rounded transition">General Settings</a>
                     <a href="users.php" class="sidebar-link block py-2.5 px-4 rounded transition">Admin Users</a>
                     <a href="logs.php" class="sidebar-link block py-2.5 px-4 rounded transition">System Logs</a>
-                    <a href="../index.html" class="sidebar-link block py-2.5 px-4 rounded transition text-accent-light hover:text-white mt-4">Exit Admin</a>
+                    <a href="?logout=1" class="sidebar-link block py-2.5 px-4 rounded transition text-accent-light hover:text-white mt-4">Logout</a>
                 </div>
             </nav>
         </aside>
