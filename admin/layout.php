@@ -53,10 +53,6 @@ function renderAdminHeader($title) {
                 <a href="donations.php" class="sidebar-link block py-2.5 px-4 rounded transition">Donations</a>
                 <a href="volunteers.php" class="sidebar-link block py-2.5 px-4 rounded transition">Volunteers</a>
                 <a href="support.php" class="sidebar-link block py-2.5 px-4 rounded transition">Support Requests</a>
-                <a href="adopt.php" class="sidebar-link flex items-center gap-3 p-3 rounded-xl transition font-bold text-gray-500 hover:text-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
-                    Adopt a Taxpayer
-                </a>
                 <div class="pt-6">
                     <a href="?logout=1" class="sidebar-link block py-2.5 px-4 rounded transition text-accent-light hover:text-white mt-4">Logout</a>
                 </div>
